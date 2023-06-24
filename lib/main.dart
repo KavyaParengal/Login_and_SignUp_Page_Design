@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'BacasimeAntique',
+        hoverColor: Colors.blueGrey,
       ),
+
       debugShowCheckedModeBanner: false,
       home: Split(),
     );
