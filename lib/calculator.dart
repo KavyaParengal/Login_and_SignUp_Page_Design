@@ -12,37 +12,40 @@ class _CalculatorState extends State<Calculator> {
   String output = "0";
   String history='';
   String _output = "";
-  int num1 = 0;
-  int num2 = 0;
+  double num1 = 0.0;
+  double num2 = 0.0;
   String operand = "";
 
   buttonPressed(String buttonText) {
     if (buttonText == "C") {
       _output = "0";
-      num1 = 0;
-      num2 = 0;
+      num1 = 0.0;
+      num2 = 0.0;
       operand = "";
     }
     else if (buttonText == "AC") {
       _output = "0";
-      num1 = 0;
-      num2 = 0;
+      num1 = 0.0;
+      num2 = 0.0;
       operand = "";
       history='';
     }
     else if (buttonText == "+" || buttonText == "-" || buttonText == "/" || buttonText == "*" || buttonText=='%') {
-      num1 = int.parse(output);
+      num1 = double.parse(output);
       operand = buttonText;
       _output = "";
-    } else if (buttonText == ".") {
+    }
+    else if (buttonText == ".") {
       if (_output.contains(".")) {
         print("Already conatains a decimals");
         return;
-      } else {
+      }
+      else {
         _output = _output + buttonText;
       }
-    } else if (buttonText == "=") {
-      num2 = int.parse(output);
+    }
+    else if (buttonText == "=") {
+      num2 = double.parse(output);
 
       if (operand == "+") {
         _output = (num1 + num2).toString();
@@ -64,11 +67,12 @@ class _CalculatorState extends State<Calculator> {
         _output = (num1 % num2).toString();
         history=num1.toString() + operand.toString() + num2.toString();
       }
-      // num1 = 0;
-      // num2 = 0;
-      // operand = "";
-    } else {
-      _output = int.parse(output + buttonText).toString();
+      num1 = 0.0;
+      num2 = 0.0;
+      operand = "";
+    }
+    else {
+      _output = _output + buttonText;
     }
 
     print(_output);
@@ -172,7 +176,7 @@ class _CalculatorState extends State<Calculator> {
   CircleAvatar buildCircleAvatar(String calculatortxt,Color clrbutton) {
     return CircleAvatar(
                 backgroundColor: clrbutton,
-                radius: 42,
+                radius: 43,
                 child: TextButton(child: Text(calculatortxt,
                   style: TextStyle(
                       fontSize: 30,
