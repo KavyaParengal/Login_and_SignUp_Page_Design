@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task/calculator.dart';
-import 'package:task/split.dart';
+import 'package:task/split_bill.dart';
 import 'package:task/welcome.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'BacasimeAntique',
+        fontFamily: 'EBGaramond',
         hoverColor: Colors.blueGrey,
       ),
 

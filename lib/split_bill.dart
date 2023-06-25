@@ -11,16 +11,26 @@ class Split extends StatefulWidget {
 
 class _SplitState extends State<Split> {
 
-  double _value = 20;
+  double _value = 0;
   int counter=0;
   String res = "";
+  String back='';
   TextEditingController tax=TextEditingController();
 
   total(String amt){
-    res = res + amt;
+    if(amt=='x'){
+      res=res.substring(0,res.length-1);
+    }
+    else{
+      res = res + amt;
+    }
     setState(() {
       res;
     });
+  }
+
+  calculate_bill(){
+
   }
 
   @override
@@ -53,7 +63,7 @@ class _SplitState extends State<Split> {
                       padding: const EdgeInsets.only(left: 39,right: 15),
                       child: Column(
                         children: [
-                          SizedBox(height: 40,),
+                          SizedBox(height: 35,),
                           Text('Total',style: TextStyle(
                             color: Colors.white,
                             fontSize: 38,
@@ -74,7 +84,7 @@ class _SplitState extends State<Split> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SizedBox(height: 20,),
+                          SizedBox(height: 10,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -145,7 +155,7 @@ class _SplitState extends State<Split> {
             SizedBox(height: 26,),
             Text('How many friends ?',style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18
+              fontSize: 22
             ),),
             SizedBox(height: 13,),
             Slider(
@@ -251,6 +261,10 @@ class _SplitState extends State<Split> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 30,right: 30,top: 5),
                               child: TextField(
+                                onTap: (){
+                                  setState(() {
+                                  });
+                                  },
                                 controller: tax,
                                 keyboardType: TextInputType.number,
                                 style: TextStyle(height: 1,fontSize: 25, color: Colors.white),
@@ -294,9 +308,11 @@ class _SplitState extends State<Split> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      buildCircleAvatar('.',),
                       buildCircleAvatar('0',),
+                      buildCircleAvatar('x',),
                     ],
                   ),
                 ],
@@ -334,7 +350,7 @@ class _SplitState extends State<Split> {
                   child: TextButton(
                     child: Text(value,style: TextStyle(
                       color: Colors.blueGrey[900],
-                      fontSize: 42,
+                      fontSize: 33,
                       fontWeight: FontWeight.bold,
                     )),
                     onPressed: (){
