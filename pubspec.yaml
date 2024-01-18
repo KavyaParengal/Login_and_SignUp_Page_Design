@@ -82,7 +82,7 @@ flutter:
           style: italic
     - family: EBGaramond
       fonts:
-        - asset: fonts/EBGaramond-MediumItalic.ttf
+        - asset: fonts/EBGaramond-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

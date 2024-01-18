@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task/calculator.dart';
-import 'package:task/split_bill.dart';
 import 'package:task/welcome.dart';
 
 void main() {
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
 
       debugShowCheckedModeBanner: false,
-      home: Split(),
+      home: Welcome(),
     );
   }
 }
